@@ -1,20 +1,44 @@
 {
   "name": "cra-electron",
   "version": "0.1.0",
+  "homepage": "./",
   "private": true,
+  "main": "public/electron.js",
+  "scripts": {
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start": "concurrently \"BROWSER=none  react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "react-scripts build && build -mw"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "build": {
+    "appId": "cra-electron",
+    "productName": "cra-electron",
+    "copyright": "Copyright © 2019 cra-electron",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "electron": "^5.0.6",
+    "electron-builder": "^20.44.4",
+    "wait-on": "^3.2.0"
   },
   "browserslist": {
     "production": [
