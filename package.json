@@ -30,15 +30,16 @@
     }
   },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "^3.2.0",
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
-    "concurrently": "^4.1.1",
-    "electron": "^5.0.6",
-    "electron-builder": "^20.44.4",
-    "wait-on": "^3.2.0"
+    "concurrently": "^5.0.0",
+    "electron": "^7.0.1",
+    "electron-builder": "^22.1.0",
+    "wait-on": "^3.3.0"
   },
   "browserslist": {
     "production": [
